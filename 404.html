@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content="0; url=./#%2F">
+    <script>
+      (function() {
+        var l = window.location;
+        var base = l.pathname.split('/').slice(0,3).join('/') + '/';
+        var redirect = base + '#' + l.pathname.replace(base, '') + l.search + l.hash;
+        window.location.replace(redirect);
+      })();
+    </script>
+  </head>
+  <body>Redirecting…</body>
+</html>
