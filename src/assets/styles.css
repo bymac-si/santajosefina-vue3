@@ -116,3 +116,40 @@ footer{border-top:1px solid #eee; padding:24px 0 40px; color:#fff; font-size:14p
   .offcanvas .list-group-item{border:0; padding:12px 0; font-weight:600; color:var(--brand)}
   .offcanvas .btn.btn-primary{border-radius:999px; font-weight:700}
 }
+/* === CENTRAR CONTENIDO === */
+body {
+  text-align: center;
+}
+
+.container,
+.container-narrow,
+section {
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-wrap,
+.features-copy,
+.services,
+#propiedades,
+#copropiedad,
+#contacto {
+  text-align: center;
+}
+/* === NAVBAR AZUL === */
+.nav-links a {
+  color: #1a4fff !important;  /* Azul corporativo */
+}
+
+.nav-links a:hover {
+  color: #0056b3 !important;  /* Azul más oscuro al pasar el mouse */
+  text-decoration: underline;
+}
+
+.navbar-brand span,
+.navbar-brand {
+  color: #1a4fff !important;
+  font-weight: 700;
+}
