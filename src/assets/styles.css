@@ -138,18 +138,76 @@ section {
 #contacto {
   text-align: center;
 }
-/* === NAVBAR AZUL === */
+/* === NAVBAR CORPORATIVO AZUL Y BLANCO === */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(160%) blur(6px);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sombra al hacer scroll */
+.main-header.scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del nav */
+.navbar {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+/* Logo */
+.navbar-brand img {
+  height: 46px;
+  width: auto;
+}
+
+/* Links del menú */
 .nav-links a {
-  color: #1a4fff !important;  /* Azul corporativo */
+  margin-left: 18px;
+  color: #1a4fff !important; /* Azul corporativo */
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color 0.25s;
 }
 
 .nav-links a:hover {
-  color: #0056b3 !important;  /* Azul más oscuro al pasar el mouse */
-  text-decoration: underline;
+  color: #0040cc !important;
 }
 
-.navbar-brand span,
-.navbar-brand {
-  color: #1a4fff !important;
-  font-weight: 700;
+/* Botón principal */
+.btn-primary {
+  background: #1a4fff;
+  border-color: #1a4fff;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  transition: all 0.25s;
+}
+
+.btn-primary:hover {
+  background: #0040cc;
+  border-color: #0040cc;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
