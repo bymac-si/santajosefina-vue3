@@ -1,20 +1,17 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Servicios from '../views/Servicios.vue'
-import Copropiedades from '../views/Copropiedades.vue'
-import Contacto from '../views/Contacto.vue'
+import { createRouter, createWebHashHistory } from 'vue-router'
+const Home          = () => import('@/views/Home.vue')
+const Servicios     = () => import('@/views/Servicios.vue')
+const Copropiedades = () => import('@/views/Copropiedades.vue')
+const Contacto      = () => import('@/views/Contacto.vue')
 
-const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/servicios', name: 'Servicios', component: Servicios },
-  { path: '/copropiedades', name: 'Copropiedades', component: Copropiedades },
-  { path: '/contacto', name: 'Contacto', component: Contacto },
-]
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
+export default createRouter({
+  history: createWebHashHistory(),        // gh-pages friendly
+  routes: [
+    { path: '/',              name: 'home',          component: Home },
+    { path: '/servicios',     name: 'servicios',     component: Servicios },
+    { path: '/copropiedades', name: 'copropiedades', component: Copropiedades },
+    { path: '/contacto',      name: 'contacto',      component: Contacto },
+    { path: '/:pathMatch(.*)*', redirect: '/' },     // fallback
+  ],
   scrollBehavior() { return { top: 0 } }
 })
-
-export default router

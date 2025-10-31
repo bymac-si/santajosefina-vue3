@@ -15,21 +15,19 @@
       </div>
     </section>
 
-    <!-- CÍRCULOS + TEXTO -->
+    <!-- CÍRCULOS SEPARADOR CENTRADOS -->
+    <section class="container-narrow circle-stack">
+      <div class="circle-row">
+        <img class="circle-img" :src="base + 'assets/img/circ-1.jpg'" alt="" loading="lazy" decoding="async">
+        <img class="circle-img" :src="base + 'assets/img/circ-2.jpg'" alt="" loading="lazy" decoding="async">
+        <img class="circle-img" :src="base + 'assets/img/circ-3.jpg'" alt="" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- LO QUE NOS DEFINE -->
     <section class="features container-narrow">
       <div class="features-grid">
-        <div class="circles" aria-hidden="true">
-          <figure class="circle" style="position:relative; top:-170px;">
-            <img src="/assets/img/circ-1.jpg" alt="Paisaje urbano" />
-          </figure>
-          <figure class="circle" style="position:relative; top:-250px;">
-            <img src="/assets/img/circ-2.jpg" alt="Edificio y cúpula" />
-          </figure>
-          <figure class="circle" style="position:relative; top:-330px;">
-            <img src="/assets/img/circ-3.jpg" alt="Parque empresarial" />
-          </figure>
-        </div>
-        <div class="features-copy" style="position:relative; top:-220px;">
+        <div class="features-copy" style="text-align:center;">
           <p class="kicker">lo que nos define</p>
           <h2 class="h2">Transparencia • Proyección • Disponibilidad</h2>
           <div class="list">
@@ -51,18 +49,19 @@
     </section>
 
     <!-- PROPIEDADES -->
-    <section id="propiedades" class="container-narrow" style="position:relative; top:-200px; margin-bottom:-100px;">
+    <section id="propiedades" class="container-narrow" style="margin-bottom:20px;">
       <h2>Propiedades Disponibles</h2>
       <div id="listaPropiedades">
         <div v-for="(p,i) in disponibles" :key="i">
-          <img :src="p.ImagenURL || ''" alt="Propiedad" style="width:100%; height:180px; object-fit:cover;">
+          <img :src="p.ImagenURL || ''" alt="Propiedad" loading="lazy" decoding="async"
+               style="width:100%; height:180px; object-fit:cover;">
           <div class="card-body">
             <h3 style="font-size:18px; margin-bottom:5px;">{{ p.Titulo || 'Propiedad' }}</h3>
             <p class="text-muted small">{{ p.Tipo || '' }} · {{ p.Comuna || '' }} · {{ p.Region || '' }}</p>
             <p class="fw-bold" style="color:#B46A55; margin:8px 0;">
               {{ clp(p.Precio || 0) }}
             </p>
-            <p class="d-flex gap-2">
+            <p class="d-flex gap-2 justify-content-center">
               <a href="javascript:void(0)" class="btn btn-primary" @click="abrirModal(i)">Ver detalle</a>
               <a href="#contacto" class="btn btn-primary">Solicitar info</a>
             </p>
@@ -76,7 +75,10 @@
       <div class="container-narrow services">
         <div>
           <h2>Servicios Especializados</h2>
-          <p class="text-muted">Santa Josefina SpA se especializa en la Administración de Edificios y Condominios Horizontales acogidos a la Ley 21.442 de Copropiedad Inmobiliaria, brindando a su comunidad apoyo y ventajas diferenciales.</p>
+          <p class="text-muted">
+            Santa Josefina SpA se especializa en la Administración de Edificios y Condominios Horizontales
+            acogidos a la Ley 21.442 de Copropiedad Inmobiliaria, brindando a su comunidad apoyo y ventajas diferenciales.
+          </p>
           <ul class="text-muted">
             <li>Compra y venta de propiedades residenciales y comerciales.</li>
             <li>Arriendos y gestión integral para inversionistas.</li>
@@ -90,7 +92,10 @@
           <a href="mailto:marcos.castro@santajosefinaspa.cl">marcos.castro@santajosefinaspa.cl</a>
           <a href="https://www.santajosefinaspa.cl" target="_blank" rel="noopener">www.santajosefinaspa.cl</a>
           <span class="hint">Respuesta en horario hábil</span>
-          <a class="btn btn-primary" style="width:50%; margin:0 auto;" href="mailto:marcos.castro@santajosefinaspa.cl?subject=Consulta%20Landing%20Santa%20Josefina">Solicitar propuesta</a>
+          <a class="btn btn-primary" style="width:50%; margin:0 auto;"
+             href="mailto:marcos.castro@santajosefinaspa.cl?subject=Consulta%20Landing%20Santa%20Josefina">
+            Solicitar propuesta
+          </a>
         </aside>
       </div>
     </section>
@@ -98,10 +103,12 @@
     <!-- COPROPIEDAD -->
     <section id="copropiedad" class="container-narrow">
       <h2>Administración de Copropiedades</h2>
-      <p class="text-muted" style="max-width:800px">
-        Con la entrada en vigencia de la <strong>Ley N°21.442 de Copropiedad Inmobiliaria</strong>, ofrecemos administración profesional de condominios y edificios, asegurando transparencia, eficiencia y cumplimiento normativo. Inscritos en el Registro Nacional de Administradores del Minvu.
+      <p class="text-muted" style="max-width:800px; margin: 0 auto;">
+        Con la entrada en vigencia de la <strong>Ley N°21.442 de Copropiedad Inmobiliaria</strong>, ofrecemos
+        administración profesional de condominios y edificios, asegurando transparencia, eficiencia y
+        cumplimiento normativo. Inscritos en el Registro Nacional de Administradores del Minvu.
       </p>
-      <ul class="text-muted" style="max-width:800px">
+      <ul class="text-muted" style="max-width:800px; margin: 10px auto 0;">
         <li>Gestión financiera y contable con reportes claros a la comunidad.</li>
         <li>Mantención preventiva y correctiva de áreas comunes.</li>
         <li>Protocolos de seguridad y convivencia.</li>
@@ -135,7 +142,8 @@
       <div class="modal-content">
         <button class="btn btn-primary" style="width:50%; margin:0 auto;" @click="cerrarModal">Cerrar</button>
         <h1 style="font-size:24px; font-weight:bold; margin-top:6px;">{{ sel?.Titulo || 'Propiedad' }}</h1>
-        <img :src="sel?.ImagenURL || ''" alt="Imagen propiedad" style="width:100%;max-height:250px;object-fit:cover;border-radius:6px;margin-bottom:10px;">
+        <img :src="sel?.ImagenURL || ''" alt="Imagen propiedad"
+             style="width:100%;max-height:250px;object-fit:cover;border-radius:6px;margin-bottom:10px;">
         <p><b>Tipo:</b> {{ sel?.Tipo || '' }}</p>
         <p><b>Comuna:</b> {{ sel?.Comuna || '' }}</p>
         <p><b>Región:</b> {{ sel?.Region || '' }}</p>
@@ -145,10 +153,34 @@
           <div class="card-body p-0">
             <table class="table table-bordered mb-0">
               <tbody>
-                <tr><th style="width:75%;"><img src="/assets/img/plan.svg" style="width:20px;vertical-align:middle;margin-right:6px;">Metros Cuadrados Construidos</th><td style="text-align:center;">{{ sel?.MetrosConstruidos || '—' }}</td></tr>
-                <tr><th><img src="/assets/img/area.svg" style="width:20px;vertical-align:middle;margin-right:6px;">Metros Cuadrados Totales</th><td style="text-align:center;">{{ sel?.MetrosTotales || '—' }}</td></tr>
-                <tr><th><img src="/assets/img/bed.svg"  style="width:20px;vertical-align:middle;margin-right:6px;">Dormitorios</th><td style="text-align:center;">{{ sel?.Dormitorios || '—' }}</td></tr>
-                <tr><th><img src="/assets/img/bathroom.svg" style="width:20px;vertical-align:middle;margin-right:6px;">Baños</th><td style="text-align:center;">{{ sel?.Banos || '—' }}</td></tr>
+                <tr>
+                  <th style="width:75%;">
+                    <img :src="base + 'assets/img/plan.svg'" style="width:20px;vertical-align:middle;margin-right:6px;">
+                    Metros Cuadrados Construidos
+                  </th>
+                  <td style="text-align:center;">{{ sel?.MetrosConstruidos || '—' }}</td>
+                </tr>
+                <tr>
+                  <th>
+                    <img :src="base + 'assets/img/area.svg'" style="width:20px;vertical-align:middle;margin-right:6px;">
+                    Metros Cuadrados Totales
+                  </th>
+                  <td style="text-align:center;">{{ sel?.MetrosTotales || '—' }}</td>
+                </tr>
+                <tr>
+                  <th>
+                    <img :src="base + 'assets/img/bed.svg'" style="width:20px;vertical-align:middle;margin-right:6px;">
+                    Dormitorios
+                  </th>
+                  <td style="text-align:center;">{{ sel?.Dormitorios || '—' }}</td>
+                </tr>
+                <tr>
+                  <th>
+                    <img :src="base + 'assets/img/bathroom.svg'" style="width:20px;vertical-align:middle;margin-right:6px;">
+                    Baños
+                  </th>
+                  <td style="text-align:center;">{{ sel?.Banos || '—' }}</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -161,6 +193,9 @@
 
 <script setup>
 import { reactive, ref, computed, onMounted } from 'vue'
+
+/** Base URL para assets en GitHub Pages (/santajosefina-vue3/) */
+const base = import.meta.env.BASE_URL
 
 // --- Estado
 const propsAll = ref([])
