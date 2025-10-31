@@ -7,6 +7,6 @@ import 'bootstrap'
 import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 import BootstrapVue3 from 'bootstrap-vue-3'
 
-import './assets/styles.css'   // <— tus estilos
+import './assets/styles.css'   // <— estilos globales
 
 createApp(App).use(router).use(BootstrapVue3).mount('#app')
